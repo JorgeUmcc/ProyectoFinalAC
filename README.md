@@ -1,7 +1,7 @@
 # ProyectoFinalAC
 
 ## Problema
-EL problema planeaba hallar la ecuación de la recta formada entre 2 puntos cualesquiera.
+EL problema planteaba hallar la ecuación de la recta formada entre 2 puntos cualesquiera.
 El usuario debe introducir dichos puntos y el programa calcula la ecuación de la recta automaticamente.
 
 ## Requisitos para ejecutar el programa
