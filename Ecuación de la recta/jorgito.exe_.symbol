@@ -1,0 +1,54 @@
+< THE SYMBOL TABLE >  jorgito.exe_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+DATA                     	00000     	-5        	SEGMENT   	(ITSELF)  
+X                        	00000     	1         	VAR       	data      
+Y                        	00001     	1         	VAR       	data      
+CX1                      	00002     	1         	VAR       	data      
+CX2                      	00003     	1         	VAR       	data      
+CY1                      	00004     	1         	VAR       	data      
+CY2                      	00005     	1         	VAR       	data      
+NUMERADOR_PENDIENTE      	00006     	1         	VAR       	data      
+DENOMINADOR_PENDIENTE    	00007     	1         	VAR       	data      
+PENDIENTE                	00008     	1         	VAR       	data      
+INTERCEPTO               	00009     	1         	VAR       	data      
+STACK                    	00001     	-5        	SEGMENT   	(ITSELF)  
+CODE                     	00005     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	FAR       	code      
+CALCULAR_PENDIENTE       	001C3     	-1        	LABEL     	code      
+CALCULAR_INTERCEPTO      	001EC     	-1        	LABEL     	code      
+CLEAR_SCREEN             	002B6     	-1        	NEAR      	          
+SKIP_PROC_CLEAR_SCREEN_LOC1TMP	002E8     	-1        	LABEL     	          
+PTHIS                    	002EA     	-1        	NEAR      	          
+NEXT_CHAR_LOC2TMP        	002F1     	-1        	LABEL     	          
+PRINTED_LOC2TMP          	002FF     	-1        	LABEL     	          
+TEMP1_LOC2TMP            	00307     	2         	VAR       	          
+SKIP_PROC_PTHIS_LOC2TMP  	00309     	-1        	LABEL     	          
+SCAN_NUM                 	0030C     	-1        	NEAR      	          
+NEXT_DIGIT_LOC3TMP       	00318     	-1        	LABEL     	          
+NOT_CR_LOC6TMP           	0032B     	-1        	LABEL     	          
+BACKSPACE_CHECKED_LOC4TMP	0034D     	-1        	LABEL     	          
+OK_AE_0_LOC6TMP          	00353     	-1        	LABEL     	          
+REMOVE_NOT_DIGIT_LOC6TMP 	00357     	-1        	LABEL     	          
+OK_DIGIT_LOC6TMP         	00371     	-1        	LABEL     	          
+SET_MINUS_LOC3TMP        	0038D     	-1        	LABEL     	          
+TOO_BIG2_LOC4TMP         	00395     	-1        	LABEL     	          
+TOO_BIG_LOC4TMP          	0039A     	-1        	LABEL     	          
+STOP_INPUT_LOC5TMP       	003BE     	-1        	LABEL     	          
+NOT_MINUS_LOC5TMP        	003C8     	-1        	LABEL     	          
+MAKE_MINUS_LOC3TMP       	003CC     	1         	VAR       	          
+TEN_LOC3TMP              	003CD     	2         	VAR       	          
+SKIP_PROC_SCAN_NUM_LOC5TMP	003CF     	-1        	LABEL     	          
+PRINT_NUM_UNS            	003D1     	-1        	NEAR      	          
+BEGIN_PRINT_LOC7TMP      	003E0     	-1        	LABEL     	          
+CALC_LOC7TMP             	003EE     	-1        	LABEL     	          
+SKIP_LOC7TMP             	00402     	-1        	LABEL     	          
+PRINT_ZERO_LOC7TMP       	00412     	-1        	LABEL     	          
+END_PRINT_LOC7TMP        	0041A     	-1        	LABEL     	          
+TEN_LOC7TMP              	0041F     	2         	VAR       	          
+SKIP_PROC_PRINT_NUM_UNS_LOC8TMP	00421     	-1        	LABEL     	          
+===================================================================================================
+[ 07/07/23  --  23:32:25 ] 
+< END >
+ 

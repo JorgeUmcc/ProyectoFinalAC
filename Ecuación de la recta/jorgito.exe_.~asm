@@ -1,0 +1,149 @@
+
+include "emu8086.inc"
+
+data segment
+
+x db ?
+y db ?
+cx1 db ?
+cx2 db ?
+cy1 db ?
+cy2 db ?
+numerador_pendiente db ?
+denominador_pendiente db ?
+pendiente db ?
+intercepto db ?
+
+data ends
+
+stack segment
+
+db 64 dup(?)
+
+stack ends
+
+code segment
+
+start proc far
+
+assume ds:data, cs:code, ss:stack
+
+push ds
+mov ax, 0
+push ax
+
+mov ax, data
+mov ds, ax
+mov es, ax
+
+; A partir de aqui empezamos
+
+mov x, 2
+mov y, 2
+gotoxy x, y
+call pthis
+db "ECUACION DADOS DOS PUNTOS:", 0
+
+add y, 2
+gotoxy x, y
+call pthis
+db "Inserte las coordenadas de x1:", 0
+add x, 32
+gotoxy x, y
+call scan_num
+mov cx1, cl
+
+add y, 2
+mov x, 2
+gotoxy x, y
+call pthis
+db "Inserte las coordenadas de y1:", 0
+add x, 32
+gotoxy x, y
+call scan_num
+mov cy1, cl
+
+add y, 2
+mov x, 2
+gotoxy x, y
+call pthis
+db "Inserte las coordenadas de x2:", 0
+add x, 32
+gotoxy x, y
+call scan_num
+mov cx2, cl
+
+add y, 2
+mov x, 2
+gotoxy x, y
+call pthis
+db "Inserte las coordenadas de y2:", 0
+add x, 32
+gotoxy x, y
+call scan_num
+mov cy2, cl
+
+calcular_pendiente:
+mov al, cy2
+sub al, cy1
+mov numerador_pendiente, al
+mov ax, 0
+mov al, cx2
+sub al, cx1
+mov denominador_pendiente, al
+mov ax, 0
+mov bx, 0
+mov bl, denominador_pendiente
+mov al, numerador_pendiente
+div bl
+mov pendiente, al
+
+calcular_intercepto:
+mov ax, 0
+mov bx, 0
+mov bl, cx1
+mov al, pendiente
+mul bl
+mov pendiente, al
+mov ax, 0
+mov bx, 0
+mov al, cy1
+sub al, pendiente
+mov intercepto, al
+
+mov x, 2
+add y, 4
+gotoxy x, y
+call pthis
+db "La ecuacion de la recta es: y =", 0
+add x, 32
+gotoxy x, y
+mov ax, 0
+mov al, pendiente
+call print_num_uns
+add x, 2
+gotoxy x, y
+call pthis
+db "x +", 0
+add x, 4
+gotoxy x, y
+mov ax, 0
+mov al, intercepto
+call print_num_uns
+
+ret
+
+start endp
+
+code ends
+
+define_clear_screen
+define_pthis
+define_scan_num
+define_print_num_uns
+
+end start
+
+
+
+; [SOURCE]: C:\emu8086\MySource\jorgito.asm
